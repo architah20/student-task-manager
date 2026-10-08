@@ -11,3 +11,5 @@ and delivered with a complete DevOps pipeline.
 ## Tools Used
 Git, GitHub, Docker, Docker Compose, Jenkins, GitHub Actions, Jira, Prometheus,
 Grafana, Terraform, AWS
+## Project Status
+- Initial branching strategy configured for the project.
