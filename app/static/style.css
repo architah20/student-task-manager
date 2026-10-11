@@ -1,0 +1,84 @@
+:root {
+  --bg: #f4f6fb;
+  --card: #ffffff;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --primary: #4f46e5;
+  --danger: #dc2626;
+  --success: #16a34a;
+  --border: #e5e7eb;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.container { max-width: 720px; margin: 0 auto; padding: 32px 16px 64px; }
+header { text-align: center; margin-bottom: 24px; }
+h1 { margin: 0; font-size: 2rem; }
+h2 { margin: 0 0 12px; font-size: 1.15rem; }
+.subtitle { color: var(--muted); margin: 4px 0 12px; }
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+input[type="text"], input[type="date"], textarea {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 10px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font: inherit;
+}
+
+.row { display: flex; gap: 10px; align-items: center; }
+.row input { margin-bottom: 0; }
+
+.btn {
+  border: 1px solid var(--border);
+  background: #fff;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font: inherit;
+}
+.btn:hover { background: #f3f4f6; }
+.btn.primary { background: var(--primary); color: #fff; border-color: var(--primary); white-space: nowrap; }
+.btn.primary:hover { background: #4338ca; }
+.btn.danger { color: var(--danger); }
+.btn.small { padding: 4px 10px; font-size: 0.85rem; }
+.filter.active { background: var(--primary); color: #fff; border-color: var(--primary); }
+
+.list-header { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+.filters { display: flex; gap: 6px; }
+
+ul { list-style: none; padding: 0; margin: 0; }
+
+.task {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px 0;
+  border-top: 1px solid var(--border);
+}
+.task:first-child { border-top: none; }
+.task h3 { margin: 0 0 2px; font-size: 1rem; }
+.task p { margin: 0; color: var(--muted); font-size: 0.9rem; }
+.task.done h3 { text-decoration: line-through; color: var(--muted); }
+.meta { font-size: 0.8rem; color: var(--muted); margin-top: 4px; }
+.badge { padding: 2px 8px; border-radius: 999px; font-size: 0.75rem; background: #fef3c7; color: #92400e; }
+.task.done .badge { background: #dcfce7; color: var(--success); }
+.actions { display: flex; gap: 6px; flex-shrink: 0; }
+.error { color: var(--danger); margin: 8px 0 0; }

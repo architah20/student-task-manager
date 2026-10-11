@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Student Task Manager</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>Student Task Manager</h1>
+      <p class="subtitle">Plan your work, track your progress.</p>
+    </header>
+
+    <section class="card">
+      <h2>Add a task</h2>
+      <form id="task-form">
+        <input id="title" type="text" placeholder="Task title" maxlength="200" required>
+        <textarea id="description" placeholder="Description (optional)" rows="2"></textarea>
+        <div class="row">
+          <input id="due_date" type="date">
+          <button type="submit" class="btn primary">Add task</button>
+        </div>
+        <p id="form-error" class="error" hidden></p>
+      </form>
+    </section>
+
+    <section class="card">
+      <div class="list-header">
+        <h2>Your tasks</h2>
+        <div class="filters">
+          <button class="btn filter active" data-filter="">All</button>
+          <button class="btn filter" data-filter="pending">Pending</button>
+          <button class="btn filter" data-filter="done">Done</button>
+        </div>
+      </div>
+      <p id="summary" class="subtitle"></p>
+      <ul id="task-list"></ul>
+      <p id="empty" class="subtitle" hidden>No tasks yet. Add your first one above.</p>
+    </section>
+  </main>
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
