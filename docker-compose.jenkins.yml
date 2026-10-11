@@ -1,0 +1,17 @@
+# Run Jenkins separately from the app stack:
+#   docker compose -f docker-compose.jenkins.yml up -d --build
+services:
+  jenkins:
+    build: ./jenkins
+    container_name: jenkins
+    user: root            # lets Jenkins use the host Docker socket (fine for a lab setup)
+    ports:
+      - "8081:8080"
+      - "50000:50000"
+    volumes:
+      - jenkins_home:/var/jenkins_home
+      - /var/run/docker.sock:/var/run/docker.sock
+    restart: unless-stopped
+
+volumes:
+  jenkins_home:
